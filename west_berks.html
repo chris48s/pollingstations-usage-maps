@@ -15,6 +15,23 @@
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+
+	<script type="text/javascript" src="http://openspace.ordnancesurvey.co.uk/osmapapi/openspace.js?key=C80D13C5C8C697AFE0405F0AC8607F3B"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.3/jquery.min.js"></script>
+	<script type="text/javascript" src="javascripts/os_thematic.js"></script>
+    <script type="text/javascript" src="javascripts/map.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function () {
+            drawMap(
+                'data/westberks_engagement_by_ward.json',
+                'map',
+                new OpenSpace.MapPoint(450000, 173000),
+                5, "UTW"
+            );
+            drawLegend();
+		});
+	</script>
   </head>
 
   <body>
@@ -29,7 +46,18 @@
       <div class="inner clearfix">
 
         <section id="main-content">
-            &nbsp;
+
+          <h3>West Berkshire</h3>
+            <div id="map"></div>
+
+            <p style="margin-top: 1em">
+            Page impressions on Democracy Club Polling Stations 25th April 2016 - 5th May 2016
+            (source: Democracy Club) normalised by voting age population
+            (source: ONS 2014 Ward population estimates for England and Wales, mid-2014)
+            </p>
+
+            <div id="legend"></div>
+
         </section>
 
       </div>
